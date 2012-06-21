@@ -28,13 +28,16 @@ class NullOptions(object):
 if __name__ == '__main__':
     from pprint import pprint
     import sys
+    import json
     if len(sys.argv) > 1:
         reqfile = sys.argv[1]
     else:
         raise RuntimeError("usage: parse_requirements /path/to/requirements.txt")
     reqs = list(parse_requirements(reqfile, options=NullOptions()))
     reqs = [i for i in reqs if i.name]
-    pprint( dict([
+    print json.dumps(
+        dict([
                 to_json(i) for i in reqs
-                ]) )
+                ]) 
+        ) 
     
