@@ -2,140 +2,80 @@ Pass in a requirements.txt file, get back structured JSON summary.  Work in prog
 
 Works on URLs too!
 
-$ python parse_reqs.py http://dist.socialplanning.org/build/requirements/opencore-maximal/trunk/frontend-req.txt | python -m json.tool
+$ python jsonpip.py parse http://dist.socialplanning.org/build/requirements/opencore-maximal/trunk/frontend-req.txt | python -m json.tool
 
 {
     "Beaker": {
-        "comes_from": "-r http://dist.socialplanning.org/build/requirements/opencore-maximal/trunk/frontend-req.txt (line 5)", 
         "editable": false, 
-        "extras": [], 
-        "install_spec": [
-            [
-                "==", 
-                "1.5.4"
-            ]
-        ], 
-        "source_dir": null, 
-        "url": null
+        "name": "Beaker", 
+        "url": null, 
+        "version": "1.5.4"
     }, 
     "Deliverance": {
-        "comes_from": "-r http://dist.socialplanning.org/build/requirements/opencore-maximal/trunk/frontend-req.txt (line 7)", 
         "editable": true, 
-        "extras": [], 
-        "install_spec": [], 
-        "source_dir": null, 
-        "url": {
-            "egg_fragment": "Deliverance-dev", 
-            "path": "git+git@github.com:deliverance/Deliverance.git"
-        }
+        "name": "Deliverance", 
+        "url": "git+git@github.com:deliverance/Deliverance.git", 
+        "version": "dev"
     }, 
     "Paste": {
-        "comes_from": "-r http://dist.socialplanning.org/build/requirements/opencore-maximal/trunk/frontend-req.txt (line 1)", 
         "editable": false, 
-        "extras": [], 
-        "install_spec": [
-            [
-                "==", 
-                "1.7.2"
-            ]
-        ], 
-        "source_dir": null, 
-        "url": null
+        "name": "Paste", 
+        "url": null, 
+        "version": "1.7.2"
     }, 
     "PasteDeploy": {
-        "comes_from": "-r http://dist.socialplanning.org/build/requirements/opencore-maximal/trunk/frontend-req.txt (line 3)", 
         "editable": false, 
-        "extras": [], 
-        "install_spec": [
-            [
-                "==", 
-                "1.3.4"
-            ]
-        ], 
-        "source_dir": null, 
-        "url": null
+        "name": "PasteDeploy", 
+        "url": null, 
+        "version": "1.3.4"
     }, 
     "PasteScript": {
-        "comes_from": "-r http://dist.socialplanning.org/build/requirements/opencore-maximal/trunk/frontend-req.txt (line 2)", 
         "editable": false, 
-        "extras": [], 
-        "install_spec": [
-            [
-                "==", 
-                "1.7.3"
-            ]
-        ], 
-        "source_dir": null, 
-        "url": null
+        "name": "PasteScript", 
+        "url": null, 
+        "version": "1.7.3"
     }, 
     "WSGIFilter": {
-        "comes_from": "-r http://dist.socialplanning.org/build/requirements/opencore-maximal/trunk/frontend-req.txt (line 8)", 
         "editable": false, 
-        "extras": [], 
-        "install_spec": [], 
-        "source_dir": null, 
-        "url": null
+        "name": "WSGIFilter", 
+        "url": null, 
+        "version": null
     }, 
     "WSGIProxy": {
-        "comes_from": "-r http://dist.socialplanning.org/build/requirements/opencore-maximal/trunk/frontend-req.txt (line 9)", 
         "editable": false, 
-        "extras": [], 
-        "install_spec": [], 
-        "source_dir": null, 
-        "url": null
+        "name": "WSGIProxy", 
+        "url": null, 
+        "version": null
     }, 
     "WebOb": {
-        "comes_from": "-r http://dist.socialplanning.org/build/requirements/opencore-maximal/trunk/frontend-req.txt (line 4)", 
         "editable": false, 
-        "extras": [], 
-        "install_spec": [
-            [
-                "==", 
-                "1.0.8"
-            ]
-        ], 
-        "source_dir": null, 
-        "url": null
+        "name": "WebOb", 
+        "url": null, 
+        "version": "1.0.8"
     }, 
     "eyvind": {
-        "comes_from": "-r http://dist.socialplanning.org/build/requirements/opencore-maximal/trunk/frontend-req.txt (line 11)", 
         "editable": true, 
-        "extras": [], 
-        "install_spec": [], 
-        "source_dir": null, 
-        "url": {
-            "egg_fragment": "eyvind-dev", 
-            "path": "git+git@github.com:socialplanning/eyvind.git"
-        }
+        "name": "eyvind", 
+        "url": "git+git@github.com:socialplanning/eyvind.git", 
+        "version": "dev"
     }, 
     "libopencore": {
-        "comes_from": "-r http://dist.socialplanning.org/build/requirements/opencore-maximal/trunk/frontend-req.txt (line 6)", 
         "editable": true, 
-        "extras": [], 
-        "install_spec": [], 
-        "source_dir": null, 
-        "url": {
-            "egg_fragment": "libopencore-dev", 
-            "path": "git+git@github.com:socialplanning/libopencore.git"
-        }
+        "name": "libopencore", 
+        "url": "git+git@github.com:socialplanning/libopencore.git", 
+        "version": "dev"
     }, 
     "setuptools": {
-        "comes_from": "-r http://dist.socialplanning.org/build/requirements/opencore-maximal/trunk/frontend-req.txt (line 10)", 
         "editable": false, 
-        "extras": [], 
-        "install_spec": [], 
-        "source_dir": null, 
-        "url": null
+        "name": "setuptools", 
+        "url": null, 
+        "version": null
     }, 
     "transcluder": {
-        "comes_from": "-r http://dist.socialplanning.org/build/requirements/opencore-maximal/trunk/frontend-req.txt (line 12)", 
         "editable": true, 
-        "extras": [], 
-        "install_spec": [], 
-        "source_dir": null, 
-        "url": {
-            "egg_fragment": "transcluder-dev", 
-            "path": "git+git@github.com:socialplanning/transcluder.git"
-        }
+        "name": "transcluder", 
+        "url": "git+git@github.com:socialplanning/transcluder.git", 
+        "version": "dev"
     }
 }
+

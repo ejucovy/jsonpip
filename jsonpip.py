@@ -3,6 +3,22 @@ from pip.req import parse_requirements
 from pip.download import _get_used_vcs_backend
 from pip.index import Link
 
+def determine_version(url_spec, distutils_spec):
+    url_spec_version = None
+    if url_spec and 'egg_fragment' in url_spec:
+        url_spec_version = url_spec['egg_fragment'].split("-")[-1]
+
+    distutils_spec_version = None
+    if distutils_spec:
+        for spec in distutils_spec:
+            if spec and spec[0] == "==":
+                distutils_spec_version = spec[1]
+    if distutils_spec_version:
+        return distutils_spec_version
+    if url_spec_version:
+        return url_spec_version
+    return None
+
 def to_json(req):
     url = None; link = None
     if req.url:
@@ -12,13 +28,13 @@ def to_json(req):
             'path': link.path,
             }
 
+    version = determine_version(url, req.req.specs)
+
     return req.name, {
-        'comes_from': req.comes_from,
-        'source_dir': req.source_dir,
+        'name': req.name,
+        'version': version,
         'editable': req.editable,
-        'url': url,
-        'install_spec': req.req.specs,
-        'extras': req.extras,
+        'url': url['path'] if url else None,
         }
 
 class NullOptions(object):
