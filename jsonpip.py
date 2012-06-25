@@ -2,10 +2,12 @@ from pip.req import InstallRequirement
 from pip.req import parse_requirements
 from pip.download import _get_used_vcs_backend
 from pip.index import Link
+from pip.vcs import VersionControl
 
-def determine_version(url_spec, distutils_spec):
+def determine_version(name, url_spec, distutils_spec):
     url_spec_version = None
     if url_spec and 'egg_fragment' in url_spec:
+        
         url_spec_version = url_spec['egg_fragment'].split("-")[-1]
 
     distutils_spec_version = None
@@ -23,18 +25,27 @@ def to_json(req):
     url = None; link = None
     if req.url:
         link = Link(req.url)
+        path = link.url
+        if link.egg_fragment:
+            egg_fragment = "#egg=%s" % link.egg_fragment
+            path = path.replace(egg_fragment, '')
+        parser = VersionControl(path)
+        __, revision = parser.get_url_rev()
+        path = path.replace('@%s' % revision, '')
         url = {
             'egg_fragment': link.egg_fragment,
-            'path': link.path,
+            'path': path,
+            'revision': revision,
             }
 
-    version = determine_version(url, req.req.specs)
+    version = determine_version(req.name, url, req.req.specs)
 
     return req.name, {
         'name': req.name,
         'version': version,
         'editable': req.editable,
         'url': url['path'] if url else None,
+        'revision': url['revision'] if url else None,
         }
 
 class NullOptions(object):
