@@ -1,0 +1,30 @@
+Beaker==1.5.4
+-e git+git@github.com:deliverance/Deliverance.git@24e83d419a4fa168ad49c4870e1f84971afee371#egg=Deliverance-dev
+DevAuth==0.1.2
+FormEncode==1.2.4
+Genshi==0.6
+HTTPEncode==0.1
+Paste==1.7.2
+PasteDeploy==1.3.4
+PasteScript==1.7.3
+Pylons==0.9.6.2
+Routes==1.13
+Tempita==0.5.1
+-e svn+http://svn.edgewall.org/repos/trac/trunk/@r11080#egg=Trac-1.0-dev
+-e git+git@github.com:socialplanning/transcluder.git@c40376e91a1bae6d51f7d757d37f7194cc39f815#egg=Transcluder-dev
+WSGIFilter==0.2
+WSGIProxy==0.2.2
+WebError==0.10.3
+WebHelpers==1.3
+WebOb==1.0.8
+chardet==1.0.1
+decorator==3.3.3
+elementtree==1.2.7-20070827-preview
+enum==0.4.4
+-e git+git@github.com:socialplanning/eyvind.git@fe23437cdc3477da4aaff05d8223e4edaed4619a#egg=eyvind-dev
+-e git+git@github.com:socialplanning/libopencore.git@7bb996bdb9d1444b43d70f1ba9b0a680751c2848#egg=libopencore-dev
+nose==1.1.2
+pyavl==1.12
+repoze.lru==0.5
+signedheaders==0.1
+wsgi-intercept==0.5.1
